@@ -1,4 +1,4 @@
-let url = "https://fakerapi.it/api/v1/books?_quantity=10";
+let url = "https://fakerapi.it/api/v1/books?_quantity=8";
 
 fetch(url).then((response) => {
     return response.json();
@@ -17,47 +17,54 @@ function printData(apiData) {
 function printDataElem(data){
     let output = document.createElement("div");
     output.className = "card";
-    
-    let cID = document.createElement("p");
-    cID.className = "card__id";
-    cID.innerText = data.id;
+
+    let cImage = document.createElement("img");
+    cImage.className = "card__image"
+    cImage.src = "https://http.cat/images/20" + data.id + ".jpg";
+    output.appendChild(cImage);    
+
+    let cContainer = document.createElement("div");
+    cContainer.className = "card__container";
+    output.appendChild(cContainer);
 
     let cTitle = document.createElement("h3");
     cTitle.className = "card__title";
     cTitle.innerText = data.title;
+    cContainer.appendChild(cTitle);
 
     let cAuthor = document.createElement("p");
-    cAuthor.classList = "card__author";
+    cAuthor.className = "card__author";
     cAuthor.innerText = data.author;
+    cContainer.appendChild(cAuthor);
+
+    let cDescription = document.createElement("p");
+    cDescription.className = "card__descr";
+    cDescription.innerText = data.description;
+    cContainer.appendChild(cDescription);
+
+    let cFooter = document.createElement("div");
+    cFooter.className = "card__footer";
+    cContainer.appendChild(cFooter);
 
     let cGenre = document.createElement("p");
     cGenre.classList = "card__genre";
     cGenre.innerText = data.genre;
-
-    let cDescription = document.createElement("p");
-    cDescription.classList = "card__descr";
-    cDescription.innerText = data.description;
+    cFooter.appendChild(cGenre);
 
     let cIsbn = document.createElement("p");
     cIsbn.classList = "card__isbn";
     cIsbn.innerText = data.isbn;
+    cFooter.appendChild(cIsbn);
 
     let cPublished = document.createElement("p");
     cPublished.classList = "card__published";
     cPublished.innerText = data.published;
+    cFooter.appendChild(cPublished);
 
     let cPublisher = document.createElement("p");
     cPublisher.classList = "card__publisher";
     cPublisher.innerText = data.publisher;
-
-    output.appendChild(cID);
-    output.appendChild(cTitle);
-    output.appendChild(cAuthor);
-    output.appendChild(cGenre);
-    output.appendChild(cDescription);
-    output.appendChild(cIsbn);
-    output.appendChild(cPublished);
-    output.appendChild(cPublisher);
+    cFooter.appendChild(cPublisher);
 
     return output;
 }

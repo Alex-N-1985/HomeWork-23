@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 10px;
+    font-family: sans-serif;
     font-size: 1rem;
     color: black;
 }
@@ -8,6 +9,58 @@ body {
 #main {
     border: 1px solid black;
     border-radius: 10px;
-    width: 98.5vw;
+    width: 96vw;
     padding: 1rem;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card__image {
+    display: block;
+    width: 30%;
+}
+
+.card__container {
+    display: flex;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 20px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.card__author {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card__title {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.card__descr {
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card__genre, .card__isbn, .card__published, .card__publisher {
+    display: block;
+    width: 20%;
 }
