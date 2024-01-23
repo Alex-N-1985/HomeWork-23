@@ -1,4 +1,4 @@
-let url = "https://fakerapi.it/api/v1/books?_quantity=8";
+let url = "https://fakerapi.it/api/v1/books?_quantity=10";
 
 fetch(url).then((response) => {
     return response.json();
